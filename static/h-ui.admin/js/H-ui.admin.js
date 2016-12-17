@@ -243,4 +243,13 @@ $(function(){
 	// });
 }); 
 
-// 三级菜单显示隐藏
+//datagrid 表格宽带自适应
+
+		function fixWidth(percent)     
+	{     
+  	  return (document.body.clientWidth) * percent ;      
+	}
+	function fixHeight(percent)     
+{     
+    return (document.body.clientHeight) * percent ;      
+} 

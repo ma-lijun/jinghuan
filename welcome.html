@@ -11,12 +11,15 @@
 <script type="text/javascript" src="lib/respond.min.js"></script>
 <script type="text/javascript" src="lib/PIE_IE678.js"></script>
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
-<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
-<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.7/iconfont.css" />
-<link rel="stylesheet" type="text/css" href="lib/icheck/icheck.css" />
-<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
-<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="lib/easyui/jquery-easyui-1.5/easyui.css">
+	<link rel="stylesheet" type="text/css" href="lib/easyui/jquery-easyui-1.5/icon.css">
+	<link rel="stylesheet" type="text/css" href="lib/easyui/jquery-easyui-1.5/demo.css">
+
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="lib/layer/2.1/layer.js"></script> 
+<script type="text/javascript" src="lib/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="lib/easyui/jquery-easyui-1.5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> 
 <!--[if IE 6]>
 <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
@@ -24,18 +27,24 @@
 <title>我的桌面</title>
 </head>
 <body>
-<div class="page-container">
+	<script type="text/javascript">
+//		function fixWidth(percent)     
+//	{     
+//	  return (document.body.clientWidth) * percent ;      
+//	}  
+	</script>
+<div class="page-container" data-options="toolbar:toolbar,region:'center',title:'Main Title',iconCls:'icon-ok,fit:true,border:false'">
 	<!-- <p class="f-20 text-success">欢迎admin使用洛阳憬奂项目管理系统！<span class="f-14"></span></p>
 	<p>登录次数：18 </p>
 	<p>  上次登录时间：2014-6-14 11:19:55</p> -->
-	<table class="table table-border table-bordered table-bg">
+	<!--<table class="table table-border table-bordered table-bg">
 		<thead>
 			<tr class="text-c">
 				<th class="text-c" colspan="7" scope="col">项目公告</th>
 			</tr>
 			<tr class="text-c">
 				<th>项目名称</th>
-                                                    <th>项目进度</th>
+                <th>项目进度</th>
 				<th>施工队</th>
 				<th>项目经理</th>
 				<th>运营商</th>
@@ -109,8 +118,9 @@
                                                         <td>2016-12-1</td>
                                                     </tr>
 		</tbody>
-	</table>
+	</table>-->
 <!-- 	<table class="table table-border table-bordered table-bg mt-20">
+
 		<thead>
 			<tr>
 				<th colspan="2" scope="col">服务器信息</th>
@@ -211,13 +221,42 @@
 			</tr>
 		</tbody>
 	</table> -->
+	
+	 <!--easyUI 欢迎页行风哥表格-->
+	 
+	<h2>项目进度提醒</h2>
+	 	<table class="easyui-datagrid" title="" 
+			data-options="
+				singleSelect: true,
+				iconCls: 'icon-save',
+				url: 'datagrid_data1.json',
+				method: 'get',
+				rowStyler: function(index,row){
+					if (row.listprice < 30){
+						return 'background-color:#6293BB;color:#fff;font-weight:bold;';
+					}
+				}
+			">
+		<thead>
+			<tr>
+				<th data-options="field:'itemid',width : fixWidth(0.15) ">Item ID</th>
+				<th data-options="field:'productid',width : fixWidth(0.15)">项目进度</th>
+				<th data-options="field:'listprice',width : fixWidth(0.15),align:'right'">施工队</th>
+				<th data-options="field:'unitcost',width : fixWidth(0.2),align:'right'">项目经理</th>
+				<th data-options="field:'attr1',width : fixWidth(0.2)">运营商</th>
+				<th  data-options="field:'status',width : fixWidth(0.15) ,align:'center'">计划完工日期</th>
+				
+			</tr>
+		</thead>
+	</table>
+	
 </div>
-<footer class="footer mt-20">
+<!--<footer class="footer mt-20">
 	<div class="container">
 		<p>
 			本后台系统由<a href="http://www.shangit.com" target="_blank" title="H-ui前端框架">洛阳上源科技有限公司</a>提供技术支持</p>
 	</div>
-</footer>
+</footer>-->
 <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="static/h-ui/js/H-ui.js"></script> 
 <script>
